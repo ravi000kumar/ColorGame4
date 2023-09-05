@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .login-cont {
+            border: 1px solid red;
+            height: 100px;
+            width: 200px;
+            text-align: center;
+            font-family: 'poppins', sans-serif;
+            font-size: 1.1rem;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 20px;
+            /* margin: 100px; */
+            background: lightblue;
+            display: none;
+            transition: 0.5s;
+        }
+
+        .fa-solid {
+            padding: 10px;
+            font-size: 3rem;
+        }
+
+        .container {
+            display: flex;
+            height: 30vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            /* margin-top: 100px; */
+            /* border: 1px solid red; */
+        }
+
+        .container-second {
+            display: flex;
+            height: 30vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        h2 {
+            font-family: 'poppins', sans-serif;
+            /* border: 1px solid red; */
+            margin: auto;
+            height: 60px;
+            width: 50%;
+            font-size: 1.7rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .color {
+            /* border: 1px solid red; */
+            height: 150px;
+            width: 150px;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .h1-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h1-img h1 {
+            font-family: 'poppins', sans-serif;
+            font-size: 2.7rem;
+        }
+
+        span {
+            margin-left: 45%;
+            padding: 10px 20px;
+            font-family: 'poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <i class="fa-solid fa-user" onclick="userclick()" ondblclick="userdbl()"></i>
+
+    <!-- <div id="login" class="login-cont">
+        <h3>Register</h3>
+    </div> -->
+    <br>
+    <!-- --------------------------------- ---------------->
+    <!-- -------------Guess the Color game------------ -->
+    <div class="h1-img">
+        <h1>Guess The Color </h1>
+        <img src="https://learnenglishkids.britishcouncil.org/sites/kids/files/styles/430x261_4/public/image/RS1526_Red%20col_0.jpg?itok=BPHNAKQF"
+            width="200px" alt="">
+    </div>
+    <!-- --------------------- -->
+    <h2 style="background-color: white;" id="color-demo"></h2>
+    <span id="wrong"></span>
+    <div class="container">
+        <div class="blue color" onclick="bluefun()"> </div>
+        <div class="red color" onclick="redfun()"></div>
+        <div class="green color" onclick="greenfun()"></div>
+        <div class="yellow color" onclick="yellowfun()"></div>
+        <div class="pink color" onclick="pinkfun()"></div>
+    </div>
+    <div class="container-second">
+        <div class="blue color "> </div>
+        <div class="red color "></div>
+        <div class="green color "></div>
+        <div class="yellow color "></div>
+        <div class="pink color"></div>
+    </div>
+    <script>
+        function userclick() {
+            document.getElementById('login').style.display = 'block';
+        }
+        function userdbl() {
+            document.getElementById('login').style.display = 'none';
+        }
+        // ----------------------------------------------------
+        function myfun() {
+            document.getElementById('lorem').innerHTML = 'Hello World';
+        }
+        function funout() {
+            document.getElementById('lorem').innerHTML = '';
+        }
+        name1 = ['red', 'green', 'blue', 'yellow', 'pink'];
+
+        randname = name1[Math.floor(Math.random() * name1.length)];
+
+        document.getElementById('color-demo').innerHTML = randname;
+        function bluefun() {
+            let bg = document.getElementById('color-demo').style.backgroundColor;
+            if (bg != 'white') {
+                document.getElementById('color-demo').style.backgroundColor = 'white';
+            }
+            else {
+                var b = document.getElementById('color-demo').style.backgroundColor = '#0000FF';
+            }
+            // console.log(randname+""+b)
+            if (randname == 'blue' && b == '#0000FF') {
+                document.getElementById('wrong').innerHTML = 'Right';
+            }
+            else {
+                document.getElementById('wrong').innerHTML = 'wrong';
+            }
+        }
+        function redfun() {
+            let bg = document.getElementById('color-demo').style.backgroundColor;
+            if (bg != 'white') {
+                document.getElementById('color-demo').style.backgroundColor = 'white';
+            }
+            else {
+                var b = document.getElementById('color-demo').style.backgroundColor = '#FF0000';
+            }
+            if (randname == 'red' && b == '#FF0000') {
+                document.getElementById('wrong').innerHTML = 'Right';
+            }
+            else {
+                document.getElementById('wrong').innerHTML = 'wrong';
+            }
+        }
+        function greenfun() {
+            let bg = document.getElementById('color-demo').style.backgroundColor;
+            if (bg != 'white') {
+                document.getElementById('color-demo').style.backgroundColor = 'white';
+            }
+            else {
+                var b = document.getElementById('color-demo').style.backgroundColor = '#008000';
+            }
+            if (randname == 'green' && b == '#008000') {
+                document.getElementById('wrong').innerHTML = 'Right';
+            }
+            else {
+                document.getElementById('wrong').innerHTML = 'wrong';
+            }
+        }
+        function yellowfun() {
+            let bg = document.getElementById('color-demo').style.backgroundColor;
+            if (bg != 'white') {
+                document.getElementById('color-demo').style.backgroundColor = 'white';
+            }
+            else {
+                var b = document.getElementById('color-demo').style.backgroundColor = '#FFFF00';
+            }
+            if (randname == 'yellow' && b == '#FFFF00') {
+                document.getElementById('wrong').innerHTML = 'Right';
+            }
+            else {
+                document.getElementById('wrong').innerHTML = 'wrong';
+            }
+        }
+        function pinkfun() {
+            let bg = document.getElementById('color-demo').style.backgroundColor;
+            if (bg != 'white') {
+                document.getElementById('color-demo').style.backgroundColor = 'white';
+            }
+            else {
+                var b = document.getElementById('color-demo').style.backgroundColor = '#FFC0CB';
+            }
+            if (randname == 'pink' && b == '#FFC0CB') {
+                document.getElementById('wrong').innerHTML = 'Right';
+            }
+            else {
+                document.getElementById('wrong').innerHTML = 'wrong';
+            }
+        }
+</script>    
+</body>
+</html >
